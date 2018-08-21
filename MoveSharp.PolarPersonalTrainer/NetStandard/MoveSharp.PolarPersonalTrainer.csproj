@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PolarPersonalTrainerLib" Version="1.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MoveSharp\NetStandard\MoveSharp.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\Shared\MoveSharp.PolarPersonalTrainer.Shared.projitems" Label="Shared" />
+
+</Project>
