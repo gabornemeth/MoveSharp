@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/c6yfq15sh7300anj?svg=true)](https://ci.appveyor.com/project/gabornemeth/movesharp)
+
 # MoveSharp
 
 **MoveSharp** provides a set of components to ease working with activity and training related data in .NET.
