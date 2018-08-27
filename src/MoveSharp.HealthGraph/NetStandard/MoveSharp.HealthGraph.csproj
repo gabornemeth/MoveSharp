@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Shared\**" />
+    <EmbeddedResource Remove="Shared\**" />
+    <None Remove="Shared\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HealthGraphNet" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MoveSharp\NetStandard\MoveSharp.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\Shared\MoveSharp.HealthGraph.Shared.projitems" Label="Shared" />
+
+</Project>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MoveSharp</id>
+    <title>MoveSharp</title>
+    <authors>Gabor Nemeth</authors>
+    <licenseUrl>https://github.com/gabornemeth/MoveSharp/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/gabornemeth/MoveSharp/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>MoveSharp client library.</description>
+    <language>en-US</language>
+    <copyright>Copyright - Gabor Nemeth © 2015-2018</copyright>
+    <tags>training activity strava healthgraph</tags>
+<!--    <releaseNotes>Simplified authentication interface.</releaseNotes>-->
+    <dependencies>
+      <group targetFramework="netstandard1.3">
+        <dependency id="Newtonsoft.Json" version="10.0.3" />
+        <dependency id="FubarCoder.RestSharp.Portable.Core" version="4.0.7" />
+        <dependency id="FubarCoder.RestSharp.Portable.HttpClient" version="4.0.7" />
+        <dependency id="FubarCoder.RestSharp.Portable.OAuth2" version="4.0.7" />
+        <dependency id="Portable.BouncyCastle" version="1.8.1.2" />
+        <dependency id="StravaSharp" version="0.5.0" />
+        <dependency id="SharpGeo" version="1.2.3" />
+        <dependency id="PolarPersonalTrainerLib" version="1.1.1" />
+        <dependency id="HealthGraphNet" version="2.0.3" />
+        <dependency id="OpenWeatherMap" version="1.1.0" />
+        <dependency id="Google.Apis.Drive.v3" version="1.29.0.953" />
+        <dependency id="XTools" version="0.2.3" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <!-- NetStandard 1.3 -->
+    <file src="../src/MoveSharp/NetStandard/bin/Release/netstandard1.3/MoveSharp.dll" target="lib\netstandard1.3" />
+    <file src="../src/MoveSharp.Strava/NetStandard/bin/Release/netstandard1.3/MoveSharp.Strava.dll" target="lib\netstandard1.3" />
+    <file src="../src/MoveSharp.GoogleDrive/bin/Release/netstandard1.3/MoveSharp.GoogleDrive.dll" target="lib\netstandard1.3" />
+    <file src="../src/MoveSharp.HealthGraph/NetStandard/bin/Release/netstandard1.3/MoveSharp.HealthGraph.dll" target="lib\netstandard1.3" />
+    <file src="../src/MoveSharp.PolarPersonalTrainer/NetStandard/bin/Release/netstandard1.3/MoveSharp.PolarPersonalTrainer.dll" target="lib\netstandard1.3" />
+    <file src="../src/MoveSharp.OpenWeatherMap/bin/Release/netstandard1.3/MoveSharp.OpenWeatherMap.dll" target="lib\netstandard1.3" />
+  </files>
+</package>
