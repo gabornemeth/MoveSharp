@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/c6yfq15sh7300anj?svg=true)](https://ci.appveyor.com/project/gabornemeth/movesharp)
+[![Build status](https://nrglabz.visualstudio.com/MoveSharp/_apis/build/status/MoveSharp%20NetStandard)](https://nrglabz.visualstudio.com/MoveSharp/_build/latest?definitionId=12)
 
 # MoveSharp
 
