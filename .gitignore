@@ -158,3 +158,6 @@ packages/
 /Dotfuscator/Dotfuscated
 *.userprefs
 .vs/
+
+tools
+!tools/packages.config
