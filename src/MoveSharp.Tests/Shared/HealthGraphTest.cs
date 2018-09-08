@@ -19,6 +19,9 @@ namespace MoveSharp.Tests
     /// Tests of using HealthGraph API
     /// </summary>
     [TestFixture]
+#if !TEST_INTEGRATION
+    [Ignore("Don't test online services in unit tests!")]
+#endif
     public class HealthGraphTest
     {
         private Client _client;

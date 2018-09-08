@@ -59,20 +59,38 @@ namespace MoveSharp.Tests
 
         public Settings()
         {
-            string settingsAsJson = null;
             var settingsFilePath = Environment.GetEnvironmentVariable("MOVESHARP_TESTSETTINGS");
-            if (File.Exists(settingsFilePath) == false)
-                throw new Exception($"Could not find settings for running tests in file: {settingsFilePath}");
+            if (File.Exists(settingsFilePath))
+            {
+                var settings = LoadSettings(settingsFilePath);
+                SetupServicesFromJson(settings);
+            }
+            else
+            {
+                SetupServicesAsDefault();
+            }
+        }
 
+        public UserPasswordSettings PolarPersonalTrainer { get; private set; }
+
+        public OAuth2Settings Strava { get; private set; }
+
+        public OAuth2Settings Runkeeper { get; private set; }
+
+        JObject LoadSettings(string settingsFilePath)
+        {
             using (var fs = File.Open(settingsFilePath, FileMode.Open))
             {
                 using (var reader = new StreamReader(fs))
                 {
-                    settingsAsJson = reader.ReadToEnd();
+                    var settingsAsJson = reader.ReadToEnd();
+                    return (JObject)JsonConvert.DeserializeObject(settingsAsJson);
                 }
             }
-            var settings = (JObject)JsonConvert.DeserializeObject(settingsAsJson);
+        }
 
+        void SetupServicesFromJson(JObject settings)
+        {
             PolarPersonalTrainer = new UserPasswordSettings
             {
                 UserName = (string)settings["PolarPersonalTrainer"]["UserName"],
@@ -90,10 +108,23 @@ namespace MoveSharp.Tests
             };
         }
 
-        public UserPasswordSettings PolarPersonalTrainer { get; private set; }
+        void SetupServicesAsDefault()
+        {
+            PolarPersonalTrainer = new UserPasswordSettings
+            {
+                UserName = "unknown",
+                Password = "unknown"
+            };
 
-        public OAuth2Settings Strava { get; private set; }
+            Strava = new OAuth2Settings
+            {
+                AccessToken = "unknown"
+            };
 
-        public OAuth2Settings Runkeeper { get; private set; }
+            Runkeeper = new OAuth2Settings
+            {
+                AccessToken = "unknown"
+            };
+        }
     }
 }

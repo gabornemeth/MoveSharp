@@ -14,8 +14,10 @@ namespace MoveSharp.Tests
     {
         UserPasswordSettings Settings => MoveSharp.Tests.Settings.Instance.PolarPersonalTrainer;
 
-        [Test(Description ="Retrieve data from PolarPersonalTrainer.com")]
+        [Test(Description = "Retrieve data from PolarPersonalTrainer.com")]
+#if !TEST_INTEGRATION
         [Ignore("Don't test online services in unit tests!")]
+#endif
         public async Task GetData()
         {
             var client = new PPTExport(Settings.UserName, Settings.Password);
